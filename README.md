@@ -13,7 +13,9 @@ Plane Fight game using OpenGL and C++. This is a simple game where the player ha
 
 Dependencies : freeglut, stb
 
-For Ubuntu : sudo apt-get install freeglut-devel
+For Fedora : yum install freeglut-devel
+
+For Ubuntu : sudo apt install freeglut3
 
 cmd to build(for linux) : make -f Makefile
 
