@@ -183,10 +183,16 @@ void intro(){
 	glColor3f(0, 0.5, 0);
 	draw_text(-0.2, -0.3, -1, "CLICK ENTER TO START");
 
-	glColor3f(1.0, 1.0, 1.0);
-	draw_text2(2, -1.3, -1, "By:");
-	draw_text2(2, -1.45, -1, "SHARATH B P");
-	draw_text2(2, -1.6, -1, "1BI16CS139");
+	glColor3f(0.0, 0.0, 0.0);
+	draw_text2(-2.5, -0.9, -1, "BY:");
+	draw_text2(-2.5, -1.1, -1, "SHARATH B P");
+	draw_text2(-2.5, -1.3, -1, "1BI16CS139");
+
+	glColor3f(0.0, 0.0, 0.0);
+	draw_text2(1.8, -0.9, -1, "Under the guidance of");
+	draw_text2(1.8, -1.05, -1, "Prof K.J.Banushree");
+	draw_text2(1.8, -1.2, -1, "Prof N Thanuja");
+	draw_text2(1.8, -1.35, -1, "Prof Shruthi B R");
 
 	glPopMatrix();
 
