@@ -108,10 +108,21 @@ void war(){
 	create_menu();
 
 	glEnable(GL_TEXTURE_2D);
-	mountain_tex= LoadTexture("../res/texture/mountain.jpg");
-	cloud_tex  = LoadTexture("../res/texture/day.jpg");
-	night_tex = LoadTexture("../res/texture/night.jpg");
-	terrain_tex = LoadTexture("../res/texture/land.jpg");
+	if (FILE *file = fopen("../res/texture/mountain.jpg", "r")) {
+		fclose(file);
+		mountain_tex= LoadTexture("../res/texture/mountain.jpg");
+		cloud_tex  = LoadTexture("../res/texture/day.jpg");
+		night_tex = LoadTexture("../res/texture/night.jpg");
+		terrain_tex = LoadTexture("../res/texture/land.jpg");
+	} else if(FILE *file = fopen("./res/texture/mountain.jpg", "r")){
+		fclose(file);
+		mountain_tex= LoadTexture("./res/texture/mountain.jpg");
+		cloud_tex  = LoadTexture("./res/texture/day.jpg");
+		night_tex = LoadTexture("./res/texture/night.jpg");
+		terrain_tex = LoadTexture("./res/texture/land.jpg");
+	} else{
+		cout<< "Couldn't Load Textures";
+	}
 }
 
 void create_menu(){
