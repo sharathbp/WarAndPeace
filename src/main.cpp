@@ -209,7 +209,19 @@ void begin(){
 	glLoadIdentity();
 	glPushMatrix();
 	glEnable(GL_TEXTURE_2D);
-    GLuint texture = LoadTexture("../res/texture/begin.jpg");
+	
+    	GLuint texture;
+	if (FILE *file = fopen("../res/texture/begin.jpg", "r")) {
+		cout<<"Texture Loaded from ../res/texture/"<<endl;
+		fclose(file);
+		texture = LoadTexture("../res/texture/begin.jpg");
+	}else if(FILE *file = fopen("./res/texture/begin.jpg", "r")){
+		cout<<"Texture Loaded from ./res/texture/"<<endl;
+		fclose(file);
+		texture = LoadTexture("./res/texture/begin.jpg");
+	}else{
+		cout<< "Couldn't Load Textures"<<endl;
+	}
 
     glBegin(GL_QUADS);
     	glTexCoord2f(0.1, 0.0);
