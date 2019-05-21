@@ -102,7 +102,6 @@ void specialhandle(int key, int x, int y){
 void mousehandle(int button,int state,int x,int y){
 	float xval = (float)x/(float)win_width*500.0;
 	float yval = (float)y/(float)win_height*500.0;
-	cout<<xval<<" "<<yval<<endl;
 	switch(mode){
 	case INTRO: break;
 	case BEGIN: if(button==GLUT_LEFT_BUTTON && state==GLUT_DOWN)
@@ -220,7 +219,7 @@ void begin(){
 		fclose(file);
 		texture = LoadTexture("./res/texture/begin.jpg");
 	}else{
-		cout<< "Couldn't Load Textures"<<endl;
+		cout<< "Couldn't Load Textures from ./res/texture/"<<endl;
 	}
 
     glBegin(GL_QUADS);
