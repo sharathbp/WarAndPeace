@@ -15,7 +15,7 @@ Dependencies : freeglut, stb
 
 For Fedora : yum install freeglut-devel
 
-For Ubuntu : sudo apt install freeglut3
+For Ubuntu : sudo apt install freeglut3 freeglut3-dev
 
 cmd to build(for linux) : make -f Makefile
 
