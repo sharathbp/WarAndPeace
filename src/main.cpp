@@ -236,8 +236,7 @@ void begin(){
     	glTexCoord2f(1.0, 0.0);
     	glVertex3f(2.5, -1.35, 0.0);
 	glEnd();
-
-	glDeleteTextures(1, &texture);
+	
 	glDisable(GL_TEXTURE_2D);
 
 	glPopMatrix();
