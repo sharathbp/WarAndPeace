@@ -73,6 +73,10 @@ void war(){
 	finish=false;
 	change_mode=true;
 	gen_opponent=3000; gen_opponent_bullet=1000; opponent_speed=100; ammo_fill=1000; rad=0;
+	opponent.clear();
+	bullet1.clear(); bullet2.clear();
+	opponent_bullet.clear();
+	fire.clear();
 	plane1_pos = {-0.5f, -1.2f, -8.0f};
 	plane2_pos = {0.5f, -1.2f, -8.0f};
 
