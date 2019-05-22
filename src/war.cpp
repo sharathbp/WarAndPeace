@@ -642,36 +642,38 @@ void update(int value){
 		}
 
 		// HEALTH UPDATE
-		if(!opponent_bullet.empty())
-		for(it=opponent_bullet.begin();it!=opponent_bullet.end();){
-			if(collision(*it, plane1_pos)){
-				it = opponent_bullet.erase(it);
-				health1--;
+		if (!opponent_bullet.empty())
+			for (it = opponent_bullet.begin();it != opponent_bullet.end();) {
+				bool collide = false;
+				if (collision(*it, plane1_pos)) {
+					collide = true;
+					health1--;
+				}
+				if (dual && collision(*it, plane2_pos)) {
+					collide = true;
+					health2--;
+				}
+				if(collide)
+					it = opponent_bullet.erase(it);
+				if (it != opponent_bullet.end())
+					it++;
 			}
-			if(dual && collision(*it, plane2_pos)){
-				it = opponent_bullet.erase(it);
-				health2--;
-			}
-			if (it != opponent_bullet.end())
-				it++;
-		}
 
 		// HEALTH UPDATE
-		if(!opponent.empty())
+		if (!opponent.empty())
 			for (it = opponent.begin();it != opponent.end();) {
-			if(collision(*it, plane1_pos)){
-				it = opponent.erase(it);
-				health1--;
+				bool collide = false;
+				if (collision(*it, plane1_pos)) {
+					health1--;
+				}
+				if (dual && collision(*it, plane2_pos)) {
+					health2--;
+				}
+				if(collide)
+					it = opponent.erase(it);
+				if (it != opponent.end())
+					it++;
 			}
-			if(dual && collision(*it, plane2_pos)){
-				it = opponent.erase(it);
-				health2--;
-			}
-			if (it != opponent.end())
-				it++;
-		}
-
-
 
 		// SURVIVAL
 		if(health1==0 && health2==0){
