@@ -14,6 +14,7 @@ void mousehandle(int button,int state,int x,int y);
 void specialhandle(int key, int x, int y);
 void mousepassive(int , int );
 bool instruction = false;
+GLuint texture;
 
 int main(int argc, char** argv){
 	mode = INTRO;
@@ -45,6 +46,20 @@ void init(){
 	glEnable(GL_DEPTH_TEST);
 	glShadeModel(GL_SMOOTH);
 	glEnable(GL_NORMALIZE);
+	
+	if (FILE * file = fopen("../res/texture/begin.jpg", "r")) {
+		cout << "Texture Loaded from ../../res/texture/" << endl;
+		fclose(file);
+		texture = LoadTexture("../res/texture/begin.jpg");
+	}
+	else if (FILE * file = fopen("./res/texture/begin.jpg", "r")) {
+		cout << "Texture Loaded from ./res/texture/" << endl;
+		fclose(file);
+		texture = LoadTexture("./res/texture/begin.jpg");
+	}
+	else {
+		cout << "Couldn't Load Textures from ./res/texture/" << endl;
+	}
 }
 
 void reshape(int w, int h){
@@ -209,18 +224,7 @@ void begin(){
 	glPushMatrix();
 	glEnable(GL_TEXTURE_2D);
 	
-    	GLuint texture;
-	if (FILE *file = fopen("../res/texture/begin.jpg", "r")) {
-		cout<<"Texture Loaded from ../res/texture/"<<endl;
-		fclose(file);
-		texture = LoadTexture("../res/texture/begin.jpg");
-	}else if(FILE *file = fopen("./res/texture/begin.jpg", "r")){
-		cout<<"Texture Loaded from ./res/texture/"<<endl;
-		fclose(file);
-		texture = LoadTexture("./res/texture/begin.jpg");
-	}else{
-		cout<< "Couldn't Load Textures from ./res/texture/"<<endl;
-	}
+	glBindTexture(GL_TEXTURE_2D, texture);
 
     glBegin(GL_QUADS);
     	glTexCoord2f(0.1, 0.0);
