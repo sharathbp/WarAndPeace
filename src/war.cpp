@@ -452,7 +452,7 @@ void war_display(){
 void control(unsigned char key, int x, int y){
 	switch(key){
 	case 'w':
-	case ' ': if(!paused && ammo1>0 && play){
+	case ' ': if(!paused && ammo1>0 && play && health1>0){
 				generate_bullet(&bullet1, plane1_pos);
 				ammo1--;
 			  }
@@ -474,7 +474,7 @@ void control(unsigned char key, int x, int y){
 
 void special_control(int key, int x, int y){
 	switch(key){
-	case GLUT_KEY_UP: if(!paused && ammo2>0 && play && dual){
+	case GLUT_KEY_UP: if(!paused && ammo2>0 && play && dual && health2>0){
 							generate_bullet(&bullet2, plane2_pos);
 							ammo2--;
 				  	  	  }
@@ -649,10 +649,12 @@ void update(int value){
 		if (!opponent_bullet.empty())
 			for (it = opponent_bullet.begin();it != opponent_bullet.end();) {
 				bool collide = false;
+				if(health1>0)
 				if (collision(*it, plane1_pos)) {
 					collide = true;
 					health1--;
 				}
+				if(health2>0)
 				if (dual && collision(*it, plane2_pos)) {
 					collide = true;
 					health2--;
@@ -667,9 +669,11 @@ void update(int value){
 		if (!opponent.empty())
 			for (it = opponent.begin();it != opponent.end();) {
 				bool collide = false;
+				if(health1>0)
 				if (collision(*it, plane1_pos)) {
 					health1--;
 				}
+				if(health2>0)
 				if (dual && collision(*it, plane2_pos)) {
 					health2--;
 				}
@@ -680,7 +684,7 @@ void update(int value){
 			}
 
 		// SURVIVAL
-		if(health1==0 && health2==0){
+		if(health1<=0 && health2<=0){
 			paused = true;
 			finish = true;
 		}
