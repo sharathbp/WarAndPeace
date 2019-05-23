@@ -145,12 +145,7 @@ void mousehandle(int button,int state,int x,int y){
 				break;
 	case WAR: war_mousehandle(button, state, x, y);break;
 	case PEACE: if(xval>=343 && xval<=397 && yval>=478 && yval<=490){
-						mode = BEGIN;
-						init();
-						glutDisplayFunc(begin);
-						reshape(win_width, win_height);
-						glutReshapeFunc(reshape);
-						glutPostRedisplay();
+						glutDestroyWindow(pid);
 					}break;
 	}
 }
