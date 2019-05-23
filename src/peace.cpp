@@ -72,13 +72,13 @@ void peace_display(){
 			glBindTexture(GL_TEXTURE_2D, night_tex);
 		glBegin(GL_QUADS);
 		glTexCoord2f(0.2, 0.0);
-		glVertex3f(-100, 0, -30);
+		glVertex3f(-120, 0, -30);
 		glTexCoord2f(0.2, 1.0);
-		glVertex3f(-100, 60, -30);
+		glVertex3f(-120, 60, -30);
 		glTexCoord2f(1.0, 1.0);
-		glVertex3f(100, 60, -30);
+		glVertex3f(120, 60, -30);
 		glTexCoord2f(1.0, 0.0);
-		glVertex3f(100, 0, -30);
+		glVertex3f(120, 0, -30);
 		glEnd();
 		glLightfv(GL_LIGHT0,GL_DIFFUSE, brown);
 		glLightfv(GL_LIGHT1,GL_DIFFUSE, brown);
