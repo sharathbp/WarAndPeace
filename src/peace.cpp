@@ -218,7 +218,7 @@ void peace_display(){
 
 		if(printing>7){
 			glColor3f(1.0, 1.0, 1.0);
-			draw_text2(1.0f, -1.5f, -0.9f, "PLAY AGAIN");
+			draw_text2(1.0f, -1.5f, -0.9f, "EXIT");
 		}
 		glLightfv(GL_LIGHT0,GL_DIFFUSE, brown);
 		glLightfv(GL_LIGHT1,GL_DIFFUSE, brown);
