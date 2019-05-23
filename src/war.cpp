@@ -173,13 +173,13 @@ void war_display(){
 			glBindTexture(GL_TEXTURE_2D, night_tex);
 		glBegin(GL_QUADS);
 		glTexCoord2f(0.2, 0.0);
-		glVertex3f(-100, 20, -30);
+		glVertex3f(-120, 20, -30);
 		glTexCoord2f(0.2, 1.0);
-		glVertex3f(-100, 60, -30);
+		glVertex3f(-120, 60, -30);
 		glTexCoord2f(1.0, 1.0);
-		glVertex3f(100, 60, -30);
+		glVertex3f(120, 60, -30);
 		glTexCoord2f(1.0, 0.0);
-		glVertex3f(100, 20, -30);
+		glVertex3f(120, 20, -30);
 		glEnd();
 	glPopMatrix();
 
