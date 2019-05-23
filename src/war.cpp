@@ -167,8 +167,6 @@ void war_display(){
 	// background
 	glPushMatrix();
 		glColor3f(1,1,1);
-		//glLightfv(GL_LIGHT0, GL_DIFFUSE, white);
-		//glLightfv(GL_LIGHT1, GL_DIFFUSE, white);
 		if(day)
 			glBindTexture(GL_TEXTURE_2D, cloud_tex);
 		else
@@ -183,8 +181,6 @@ void war_display(){
 		glTexCoord2f(1.0, 0.0);
 		glVertex3f(100, 20, -30);
 		glEnd();
-		//glLightfv(GL_LIGHT0,GL_DIFFUSE, brown);
-		//glLightfv(GL_LIGHT1,GL_DIFFUSE, brown);
 	glPopMatrix();
 
 	// Terrain
@@ -209,8 +205,6 @@ void war_display(){
 	// Score, Health, Pause screen
 	glPushMatrix();
 		////////////// SCORE /////////////////
-		glLightfv(GL_LIGHT0, GL_DIFFUSE, red);
-		glLightfv(GL_LIGHT1, GL_DIFFUSE, red);
 		glColor3f(1.0f,0.0f,0.0f);
 		char buffer[10];
 		snprintf(buffer, 10, "%d", score1);
@@ -254,8 +248,6 @@ void war_display(){
 		}
 
 		// Armistice
-		glLightfv(GL_LIGHT0,GL_DIFFUSE, brown);
-		glLightfv(GL_LIGHT1,GL_DIFFUSE, brown);
 		glColor3f(1.0, 1.0, 1.0);
 		glPushMatrix();
 		glTranslatef(-0.1,0,-3.001);
@@ -268,8 +260,6 @@ void war_display(){
 		if(score1==MAX || score2==MAX){
 			finish=true;
 		}
-		glLightfv(GL_LIGHT0,GL_DIFFUSE, brown);
-		glLightfv(GL_LIGHT1,GL_DIFFUSE, brown);
 	glPopMatrix();
 
 	// Player plane
@@ -369,8 +359,6 @@ void war_display(){
 	// DRAW MOUNTAIN
 	glPushMatrix();
 		glColor3f(1,1,1);
-		glLightfv(GL_LIGHT0,GL_DIFFUSE, brown);
-		glLightfv(GL_LIGHT1,GL_DIFFUSE, brown);
 		glPushMatrix();
 		glTranslatef(-10, 0, 0);
 		draw_mountain();
@@ -393,14 +381,10 @@ void war_display(){
 		draw_mountain();
 		glTranslatef(17, 0, 0);
 		draw_mountain();
-		glLightfv(GL_LIGHT0,GL_DIFFUSE, brown);
-		glLightfv(GL_LIGHT1,GL_DIFFUSE, brown);
 	glPopMatrix();
 
 	// NO OF BULLETS LEFT
 	glPushMatrix();
-		glLightfv(GL_LIGHT0,GL_DIFFUSE, black);
-		glLightfv(GL_LIGHT1,GL_DIFFUSE, black);
 		glTranslatef(2, -5, -1);
 		glScalef(2.0, 2.0, 1);
 		glColor3f(0.0f,0.0f,0.0f);
@@ -421,8 +405,6 @@ void war_display(){
 				glVertex3f(i*0.04+1.5  ,1.28f , -1.0f);
 				glEnd();
 			}
-		glLightfv(GL_LIGHT0,GL_DIFFUSE, brown);
-		glLightfv(GL_LIGHT1,GL_DIFFUSE, brown);
 	glPopMatrix();
 
 	//////////////////////// FINISHED /////////////////////////
@@ -457,10 +439,10 @@ void control(unsigned char key, int x, int y){
 				ammo1--;
 			  }
 			  break;
-	case 'd': if(plane1_pos.x < 7.0f && !paused)
+	case 'd': if(plane1_pos.x < 8.0f && !paused)
 				plane1_pos.x += 0.5;
 			  break;
-	case 'a': if(plane1_pos.x > -7.0f && !paused)
+	case 'a': if(plane1_pos.x > -8.0f && !paused)
 				plane1_pos.x -= 0.5;
 			  break;
 	case 'p': if(paused)
@@ -479,10 +461,10 @@ void special_control(int key, int x, int y){
 							ammo2--;
 				  	  	  }
 				  	  	  break;
-	case GLUT_KEY_RIGHT: if(plane2_pos.x < 10.0f && !paused && play && dual)
+	case GLUT_KEY_RIGHT: if(plane2_pos.x < 8.0f && !paused && play && dual)
 							plane2_pos.x += 0.5f;
 						break;
-	case GLUT_KEY_LEFT: if(plane2_pos.x > -10.0f && !paused && play && dual)
+	case GLUT_KEY_LEFT: if(plane2_pos.x > -8.0f && !paused && play && dual)
 							plane2_pos.x -= 0.5f;
 						break;
 	}
