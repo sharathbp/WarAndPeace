@@ -1,7 +1,7 @@
 #include "game.h"
 
 using namespace std;
-
+extern int mode;
 extern float win_width, win_height;
 extern float white[];
 extern float black[];
@@ -31,7 +31,7 @@ float theta = 0, front1 = -5, front2 = 5;
 bool clock1 = true;
 
 int printing = 0;
-
+int timer1 = 10, timer2 = 10;
 extern bool day;
 void peace() {
 	war();
@@ -44,6 +44,7 @@ void peace() {
 	theta = 0; front1 = -5;front2 = 5;
 	clock1 = true;
 	printing = 0;
+	timer1 = 10; timer2 = 10;
 	glutTimerFunc(10, plane_landing1, 0);
 	glutTimerFunc(10, plane_landing2, 0);
 	glutTimerFunc(1000, leg_move, 0);
@@ -180,7 +181,7 @@ void peace_display() {
 	glPopMatrix();
 	glPopMatrix();
 
-	glColor3f(0.0, 0.0, 0.0);
+	glColor3f(1.0, 1.0, 1.0);
 	if (printing) {
 		if (printing > 1)
 			draw_text2(-2.5, -0.5, -0.9, "The undersigned the Commander-in-Chief, Arnor, on the one hand, and the Supreme Commander of Gondor is");
@@ -197,7 +198,7 @@ void peace_display() {
 
 		if (printing > 7) {
 			glColor3f(1.0, 1.0, 1.0);
-			draw_text2(1.0f, -1.5f, -0.9f, "EXIT");
+			draw_text2(1.0f, -1.4f, -0.9f, "PLAY AGAIN");
 		}
 	}
 
@@ -205,7 +206,6 @@ void peace_display() {
 
 }
 
-int timer1 = 10, timer2 = 10;
 void plane_landing1(int value) {
 	if (plane_pos1.x > 30.0)
 		turn1 = true;
@@ -218,7 +218,7 @@ void plane_landing1(int value) {
 	theta1 -= 2;
 	timer1++;
 	glutPostRedisplay();
-	if (plane_pos1.z > -1)
+	if (plane_pos1.z > -1 && mode==PEACE)
 		glutTimerFunc((int)(timer1 * 1.001), plane_landing1, 0);
 	else {
 		struct coord temp;
@@ -234,6 +234,7 @@ void plane_landing1(int value) {
 		timer1 = 10;
 		turn1 = false;
 		theta1 = -90;
+		if(mode==PEACE)
 		glutTimerFunc((int)(timer1 * 1.001), plane_landing1, 0);
 	}
 }
@@ -249,7 +250,7 @@ void plane_landing2(int value) {
 	theta2 += 2;
 	timer2++;
 	glutPostRedisplay();
-	if (plane_pos2.z > -1)
+	if (plane_pos2.z > -1 && mode==PEACE)
 		glutTimerFunc((int)(timer2 * 1.001), plane_landing2, 0);
 	else {
 		struct coord temp;
@@ -265,6 +266,7 @@ void plane_landing2(int value) {
 		timer2 = 10;
 		turn2 = false;
 		theta2 = 90;
+		if(mode==PEACE)
 		glutTimerFunc((int)(timer2 * 1.001), plane_landing2, 0);
 	}
 }
@@ -285,7 +287,7 @@ void leg_move(int value) {
 			clock1 = true;
 	}
 	glutPostRedisplay();
-	if (front1<-0.2 && front2>0.2)
+	if (front1<-0.2 && front2>0.2 && mode==PEACE)
 		glutTimerFunc(50, leg_move, 0);
 	else {
 		theta = 0;
@@ -295,9 +297,10 @@ void leg_move(int value) {
 
 void agreement(int value) {
 	printing++;
-	if (printing < 8)
+	if (printing < 8 && mode==PEACE)
 		glutTimerFunc(3000, agreement, 0);
 }
+
 void draw_man1() {
 
 	////////////////////// man 1 ////////////////////
