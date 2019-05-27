@@ -133,9 +133,11 @@ void mousehandle(int button, int state, int x, int y) {
 				dual = false;
 			else
 				dual = true;
+			glutPostRedisplay();
 		}
 		else if (xval >= 373 && xval <= 463 && yval >= 362 && yval <= 382) {
 			instruction = instruction ? false : true;
+			glutPostRedisplay();
 		}
 				break;
 	case WAR: war_mousehandle(button, state, x, y);break;
