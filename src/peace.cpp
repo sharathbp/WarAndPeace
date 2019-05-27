@@ -1,3 +1,11 @@
+/*
+ * peace.cpp
+ *
+ *  Created on: 01-May-2019
+ *      Author: sharath
+ */
+
+
 #include "game.h"
 
 using namespace std;
@@ -196,10 +204,8 @@ void peace_display() {
 		if (printing > 6)
 			draw_text2(-2.5, -1.05, -0.9, "4. No person shall cross the military demarcation unless authorized by Military Armstice Commission.");
 
-		if (printing > 7) {
-			glColor3f(1.0, 1.0, 1.0);
-			draw_text2(1.0f, -1.4f, -0.9f, "PLAY AGAIN");
-		}
+		glColor3f(1.0, 1.0, 1.0);
+		draw_text2(1.0f, -1.3f, -0.9f, "PLAY AGAIN");
 	}
 
 	glutSwapBuffers();
