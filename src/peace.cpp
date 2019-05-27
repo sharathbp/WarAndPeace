@@ -205,7 +205,7 @@ void peace_display() {
 			draw_text2(-2.5, -1.05, -0.9, "4. No person shall cross the military demarcation unless authorized by Military Armstice Commission.");
 
 		glColor3f(1.0, 1.0, 1.0);
-		draw_text2(1.0f, -1.3f, -0.9f, "PLAY AGAIN");
+		draw_text2(1.0f, -1.2f, -0.9f, "PLAY AGAIN");
 	}
 
 	glutSwapBuffers();
