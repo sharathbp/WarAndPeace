@@ -1,3 +1,12 @@
+/*
+ * game.h
+ *
+ *  Created on: 01-May-2019
+ *      Author: sharath
+ */
+
+
+
 #include <iostream>
 #include <stdlib.h>
 #include <list>
@@ -13,7 +22,6 @@ using namespace std;
 #ifndef GAME_H_
 #define GAME_H_
 
-#define INTRO 0
 #define BEGIN 1
 #define WAR  2
 #define PEACE 3
