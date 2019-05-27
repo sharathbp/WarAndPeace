@@ -48,6 +48,7 @@ int main(int argc, char** argv) {
 
 
 void init() {
+	instruction = false;
 	glClearColor(0.52, 0.80, 0.97, 1.0);
 	glEnable(GL_DEPTH_TEST);
 	glShadeModel(GL_SMOOTH);
@@ -141,7 +142,7 @@ void mousehandle(int button, int state, int x, int y) {
 		}
 				break;
 	case WAR: war_mousehandle(button, state, x, y);break;
-	case PEACE: if (xval >= 343 && xval <= 397 && yval >= 448 && yval <= 470) {
+	case PEACE: if (xval >= 343 && xval <= 397 && yval >= 428 && yval <= 450) {
 		mode = BEGIN;
 		init();
 		glutDisplayFunc(begin);
@@ -170,7 +171,7 @@ void mousepassive(int x, int y) {
 			  else
 		glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 		break;
-	case PEACE: if (xval >= 343 && xval <= 397 && yval >= 448 && yval <= 470)
+	case PEACE: if (xval >= 343 && xval <= 397 && yval >= 428 && yval <= 450)
 		glutSetCursor(GLUT_CURSOR_DESTROY);
 				else
 		glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
