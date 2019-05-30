@@ -862,7 +862,6 @@ void draw_plane() {
 }
 
 void draw_terrain() {
-	//glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	float i, j;
 	glColor3f(0.97, 0.62, 0.25);
 
