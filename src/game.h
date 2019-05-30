@@ -52,7 +52,7 @@ void update(int);
 void blast(int);
 void ammo_relode(int);
 
-//////////////////////////// SHOOT OPPONENT/////////////////
+//////////////////////////// SHOOT OPPONENT//////////////////////
 void generate_bullet(std::list<struct coord>* , struct coord);
 
 //////////////////////////// DRAW FUNCTIONS /////////////////////
@@ -67,7 +67,6 @@ void draw_text(float , float , float , string );
 void draw_text2(float , float , float , string );
 void strokeString(float , float , float , float, string );
 GLuint LoadTexture(const char*);
-
 
 //////////////////////////////////////////////////////////////////
 /////////////////////////// PEACE ////////////////////////////////
