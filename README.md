@@ -1,4 +1,5 @@
 # WarAndPeace
+![cg2](https://user-images.githubusercontent.com/32369302/58040396-0ea97780-7b53-11e9-8cb9-959385ea8d88.PNG)
 Plane Fight game using OpenGL and C++. This is a simple game where the player has to shoot the opponent. There is also dual player mode. The animation of armstice is also done using OpenGL transformation functions.
 
 ## Basic Controls
@@ -32,14 +33,8 @@ cmd to build(for windows): make -f makefile.win
 
 - freeglut is window creating library which is used to handle window related options. It is used to create menus, add KeyboardFunc and MouseFunc. 
 
-![cg2](https://user-images.githubusercontent.com/32369302/58040396-0ea97780-7b53-11e9-8cb9-959385ea8d88.PNG)
-Here you can choose dual mode or single mode.
-
 ![cg3](https://user-images.githubusercontent.com/32369302/58040397-0f420e00-7b53-11e9-8cd8-e713a1ba3494.PNG)
 If you clicked War the above screen appears. You can right click to start the game.
-
-![cg4](https://user-images.githubusercontent.com/32369302/58040398-0f420e00-7b53-11e9-9f8d-f63d832f4d39.PNG)
-If you clicked peace the above scene appears.
 
 ![cg5](https://user-images.githubusercontent.com/32369302/58040399-0f420e00-7b53-11e9-80d9-708fab7414cb.PNG)
 This is the final scene.
