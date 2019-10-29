@@ -33,7 +33,7 @@ cmd to build(for windows): make -f makefile.win
 
 - freeglut is window creating library which is used to handle window related options. It is used to create menus, add KeyboardFunc and MouseFunc. 
 
-![cg3](https://user-images.githubusercontent.com/32369302/58040397-0f420e00-7b53-11e9-8cd8-e713a1ba3494.PNG)
+![plane](https://user-images.githubusercontent.com/32369302/67740573-4a1e6b00-fa3c-11e9-8069-aeab15a4131a.JPG)
 If you clicked War the above screen appears. You can right click to start the game.
 
 ![cg5](https://user-images.githubusercontent.com/32369302/58040399-0f420e00-7b53-11e9-80d9-708fab7414cb.PNG)
