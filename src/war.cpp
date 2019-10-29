@@ -818,28 +818,28 @@ void draw_plane() {
 
 	glBegin(GL_TRIANGLES);
 	//Right Wing
-	glColor3f(1.0, 1.0, 1.0);
+	glColor3f(0.0, 0.0, 0.0);
 	glVertex3f(0.0, 0.0, 0);
 	glVertex3f(0.0, 1, 0);
 	glColor3fv(plane_color);
 	glVertex3f(5.0, -1.0, 0);
 
 	//Left Wing
-	glColor3f(1.0, 1.0, 1.0);
+	glColor3f(0.0, 0.0, 0.0);
 	glVertex3f(0.0, 0.0, 0);
 	glVertex3f(0.0, 1, 0);
 	glColor3fv(plane_color);
 	glVertex3f(-5.0, -1.0, 0);
 
 	//Right Tail Wing
-	glColor3f(1.0, 1.0, 1.0);
+	glColor3f(0.0, 0.0, 0.0);
 	glVertex3f(0.0, -2.0, 0);
 	glVertex3f(0.0, -1.0, 0);
 	glColor3fv(plane_color);
 	glVertex3f(2.0, -2.5, 0);
 
 	//Left Tail Wing
-	glColor3f(1.0, 1.0, 1.0);
+	glColor3f(0.0, 0.0, 0.0);
 	glVertex3f(0.0, -2.0, 0);
 	glVertex3f(0.0, -1.0, 0);
 	glColor3fv(plane_color);
